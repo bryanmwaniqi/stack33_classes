@@ -1,6 +1,6 @@
 from abc import ABC
 
-class User(ABC):
+class User():
 
 	user_count=0
 
@@ -20,14 +20,18 @@ class User(ABC):
 	def post_answer(self, post, question):
 		self.answers.append(post)
 		ans = Answer(post, question)
-		
-class Question():
+
+class Post():
+	def __init__(self, post, tag):
+		self.post = post
+		self.category =tag
+
+class Question(post):
 	qstn_count=0
 	def __init__(self, post, tag):
+		super()__init__.(post, tag)
 		Question.qstn_count +=1
 		self.id = Question.qstn_count
-		self.post = post
-		self.tag = tag
 		self.answers = []
 
 	def get_answers(self):
